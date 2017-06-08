@@ -1,0 +1,20 @@
+{
+  "name": "player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "player": "www.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
