@@ -72,4 +72,90 @@ router.route('/authors')
         })
     })
 
+router.route('/authors/:name')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let author_id = data.id
+        // Following the query brings all the information that exists from a authors table
+        sql.query(`SELECT FROM authors WHERE (author_id) = ${author_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let author = data.name
+        // The variable data include the property id
+        let author_id = data.id
+        sql.query(`UPDATE authors SET (author_name) = '${author}' WHERE (author_id) = ${author_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let author_id = data.id
+        sql.query(`DELETE FROM authors WHERE (author_id) = ${author_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+router.route('/authors/:author_id')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let author_id = data.id
+        // Following the query brings all the information that exists from a authors table
+        sql.query(`SELECT FROM authors WHERE (author_id) = ${author_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let author = data.name
+        // The variable data include the property id
+        let author_id = data.id
+        sql.query(`UPDATE authors SET (author_name) = '${author}' WHERE (author_id) = ${author_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let author_id = data.id
+        sql.query(`DELETE FROM authors WHERE (author_id) = ${author_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
 module.exports = router

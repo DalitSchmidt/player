@@ -44,7 +44,250 @@ router.route('/albums')
         })
     })
 
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let album = data.name
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`UPDATE albums SET (album_name, album_image, album_year, album_description) = '${album}' WHERE (album_id) = album_id`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`DELETE FROM albums WHERE (album_id) = album_id`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
 router.route('/albums/:name')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        // Following the query brings all the information that exists from a albums table
+        sql.query(`SELECT FROM albums WHERE (album_id) = ${album_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let album = data.name
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`UPDATE albums SET (album_name, album_image, album_year, album_description) = '${album}' WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`DELETE FROM albums WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+router.route('/albums/:album_id')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        // Following the query brings all the information that exists from a albums table
+        sql.query(`SELECT FROM albums WHERE (album_id) = ${album_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let album = data.name
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`UPDATE albums SET (album_name, album_image, album_year, album_description) = '${album}' WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`DELETE FROM albums WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+router.route('/albums/:author_id')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        // Following the query brings all the information that exists from a albums table
+        sql.query(`SELECT FROM albums WHERE (album_id) = ${album_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let album = data.name
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`UPDATE albums SET (album_name, album_image, album_year, album_description) = '${album}' WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`DELETE FROM albums WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+router.route('/albums/:image')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        // Following the query brings all the information that exists from a albums table
+        sql.query(`SELECT FROM albums WHERE (album_id) = ${album_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let album = data.name
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`UPDATE albums SET (album_name, album_image, album_year, album_description) = '${album}' WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`DELETE FROM albums WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+router.route('/albums/:year')
+    .get(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        // Following the query brings all the information that exists from a albums table
+        sql.query(`SELECT FROM albums WHERE (album_id) = ${album_id}`, (error, results, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get all the results (as and)
+            res.json(results)
+        })
+    })
+
+    .put(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property name
+        let album = data.name
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`UPDATE albums SET (album_name, album_image, album_year, album_description) = '${album}' WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+    .delete(( req, res ) => {
+        // The variable data include the body of the request
+        let data = req.body
+        // The variable data include the property id
+        let album_id = data.id
+        sql.query(`DELETE FROM albums WHERE (album_id) = ${album_id}`, (error, result, fields) => {
+            // If there is any error we thrown an error with the error variable
+            if (error) throw error
+            // Get the result (as and)
+            res.json(result)
+        })
+    })
+
+router.route('/albums/:description')
     .get(( req, res ) => {
         // The variable data include the body of the request
         let data = req.body
