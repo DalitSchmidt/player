@@ -1,16 +1,10 @@
 CREATE TABLE albums (
     album_id smallint(5) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     album_name varchar(100) NOT NULL,
-    author_id int(7) UNSIGNED NOT NULL,
+    album_artist varchar(50) NOT NULL,
     album_image varchar(255) UNIQUE,
     album_year varchar(4) NOT NULL,
-    album_description text,
-    FOREIGN KEY (author_id) REFERENCES authors(author_id)
-);
-
-CREATE TABLE authors (
-    author_id int(7) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    author_name varchar(100) UNIQUE NOT NULL
+    album_description text
 );
 
 CREATE TABLE songs (
